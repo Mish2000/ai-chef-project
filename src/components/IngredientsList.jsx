@@ -11,7 +11,7 @@ function IngredientsList(props){
             <h2>Ingredients on hand:</h2>
             <ul className="ingredients-list" aria-live="polite">{ingredientsListItems}</ul>
             {props.ingredients.length > 0 && <div className="get-recipe-container">
-                <div>
+                <div ref={props.ref}>
                     <h3>Ready for a recipe?</h3>
                     <p>Generate a recipe from your list of ingredients.</p>
                 </div>
@@ -25,6 +25,7 @@ export default IngredientsList;
 
 IngredientsList.propTypes = {
     ingredients: PropTypes.array.isRequired,
-    getRecipe: PropTypes.func.isRequired
+    getRecipe: PropTypes.func.isRequired,
+    ref: PropTypes.object
 }
 
